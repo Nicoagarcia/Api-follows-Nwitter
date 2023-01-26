@@ -1,0 +1,11 @@
+<turbo-stream action="replace" target="<%= dom_id(@user) %>">
+<template>
+<%= render @user  %>
+</template>
+</turbo-stream>
+
+<turbo-stream action="replace" target="<%= dom_id(@current_user) %>">
+<template>
+<%= render @current_user %>
+</template>
+</turbo-stream>

@@ -1,0 +1,34 @@
+<div data-controller='followers'>
+<h3 data-action='click->followers#showFollowers'>Seguidores</h3>
+<h3 data-action='click->followers#showFollowings'>Siguiendo</h3>
+
+<div data-followers-target='followers' hidden>
+
+<ul>
+  <% if @followers.present? %>
+    <% @followers.each do |follower| %>
+      <li><%= follower.name %></li>
+    <% end %>
+  <% else %>
+    <li>Este usuario no tiene seguidores</li>
+  <% end %>
+</ul>
+
+</div>
+<div data-followers-target='followings' hidden>
+<ul>
+  <% if @following.present? %>
+    <% @following.each do |following| %>
+      <li><%= following.name %></li>
+    <% end %>
+  <% else %>
+    <li>Este usuario no sigue a nadie</li>
+  <% end %>
+</ul>
+</div>
+
+
+</div>
+
+
+

@@ -1,0 +1,18 @@
+<div class="user" id='<%= dom_id(user) %>' >
+        <p class="user-name">Nombre: <%= user.name %></p>
+        <div class="user-followers-container">
+        <p class="user-followers"> Seguidores: <%= user.followers.count %> <p>
+        <p class="user-following"> Seguidos: <%= user.followings.count %> <p>
+        <div class="user-link-container">
+            <%= link_to "Ver perfil", user_path(user), class: "user-link" %>
+            <% if current_user.followings.reload.include?(user) %>
+                <%= button_to "Dejar de seguir", unfollow_user_path(user.id), method: :patch, class: "user-link" %>
+            <% else %>
+                <%= button_to "Seguir", follow_user_path(user.id), method: :patch, class: "user-link" %>
+            <% end %>
+        </div>
+        </div>
+    </div>
+    
+
+    git remote set-url origin https://SHA256:MsPiVTspkTZkeGStydUFpVJmJ5YIIX6/FyPEURFBr0c@github.com/nicoagarcia/Api-follows-Nwitter.git
